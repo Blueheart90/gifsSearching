@@ -1,13 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import { Link, Route } from 'wouter';
+
+import ListGifs from './components/ListGifs';
 
 function App() {
+  const [keyword, setKeyword] = useState('Colombia');
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Vamos millos</p>
-      </header>
+      <section className="App-content">
+        <Link href="/gif/panda">Link a Pandas</Link>
+        <Link href="/gif/the boys">Link a The boys</Link>
+        <Link href="/gif/fortnite">Link a Fornite</Link>
+        <Route path="/gif/:keyword" component={ListGifs} />
+      </section>
     </div>
   );
 }
