@@ -1,6 +1,6 @@
 const apiKey = 'ecsss8lAm2dsniIzAtOLvuW44wP8aXMT';
 
-export const getGifs = ({ keyword = 'morty' }) => {
+const getGifs = ({ keyword = 'morty' }) => {
   const apiUrl = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=25&offset=0&rating=g&lang=en`;
   return fetch(apiUrl)
     .then((res) => res.json())
@@ -14,3 +14,5 @@ export const getGifs = ({ keyword = 'morty' }) => {
       return gifs;
     });
 };
+
+export default getGifs;
